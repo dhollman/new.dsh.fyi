@@ -35,7 +35,7 @@ locale: "en-US"
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Settings specific to Github Pages
-repository: "dhollman/dsh.fyi"
+# repository: "dhollman/dsh.fyi"
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Usernames, email, and other identifiers in general
@@ -46,11 +46,11 @@ github_username: &github dhollman
 #===============================================================================
 # Theme settings
 # theme: minimal-mistakes-jekyll
-remote_theme: pages-themes/modernist@v0.2.0
+# remote_theme: pages-themes/modernist@v0.2.0
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Minimal mistakes settings
-minimal_mistakes_skin: "dark"
+# minimal_mistakes_skin: "dark"
 
 #===============================================================================
 # Output
