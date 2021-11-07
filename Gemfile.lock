@@ -89,17 +89,10 @@ GEM
       liquid (= 4.0.3)
       mercenary (~> 0.3)
       minima (= 2.5.1)
-<<<<<<< HEAD
-      nokogiri (>= 1.10.4, < 2.0)
-      rouge (= 3.26.0)
-      terminal-table (~> 1.4)
-    github-pages-health-check (1.17.7)
-=======
       nokogiri (>= 1.12.5, < 2.0)
       rouge (= 3.26.0)
       terminal-table (~> 1.4)
     github-pages-health-check (1.17.9)
->>>>>>> 7ff7a9b (update)
       addressable (~> 2.3)
       dnsruby (~> 1.60)
       octokit (~> 4.0)
