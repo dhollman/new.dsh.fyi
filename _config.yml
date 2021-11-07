@@ -18,71 +18,327 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-#===============================================================================
-# Site-wide settings
+#--------------------------------------------------------------------------------
+# Site settings
 
-title: The Whole Daisy
-subtitle: Dr. Daisy Sophia Hollman, Ph.D.
+title: dsh.fyi
+subtitle: Dr. Daisy Sophia Hollman, Ph. D.
 email: web@dsh.fyi
-description: >- # this means to ignore newlines
-  The personal and professional website of Dr. Daisy Sophia Hollman, Ph. D.  All
-  opinions expressed here are my own and do not represent my employer.
-domain: dsh.fyi
+description: >- # this means to ignore newlines until "baseurl:"
+  The personal and professional website of Dr. Daisy Sophia Hollman, Ph. D.
 url: "https://dsh.fyi"
-baseurl: "" # the subpath of your site, e.g. /blog
-locale: "en-US"
-
-
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Settings specific to Github Pages
-# repository: "dhollman/dsh.fyi"
-
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Usernames, email, and other identifiers in general
-name: &fullname Daisy Sophia Hollman
+baseurl: # the subpath of your site, e.g. /blog
 twitter_username: &twitter The_Whole_Daisy
 github_username: &github dhollman
+destination: ./docs
 
-#===============================================================================
-# Theme settings
-# theme: minimal-mistakes-jekyll
-# remote_theme: pages-themes/modernist@v0.2.0
-
-#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Minimal mistakes settings
-# minimal_mistakes_skin: "dark"
-
-#===============================================================================
-# Output
-# destination: ./docs
-
-#===============================================================================
-# Serve options
-port: 4000
-
-#===============================================================================
+#================================================================================
 # Build settings
 plugins:
   - jekyll-feed
+  - jekyll-archives
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+#================================================================================
+# Serve settings
+port: 8000
 
-theme: jekyll-theme-hacker
+#================================================================================
+# Theme settings
+theme: minimal-mistakes-jekyll
+
+#--------------------------------------------------------------------------------
+# Specific to minimal-mistakes
+minimal_mistakes_skin: "dark"
+
+#--------------------------------------------------------------------------------
+# Site settings
+
+locale: "en-US"
+title_separator: "-"
+name: &fullname Daisy Sophia Hollman
+baseurl: # the subpath of your site, e.g. "/blog"
+repository: "dhollman/dsh.fyi"
+teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo: "/assets/images/blossom_emoji_apple.png" # Masthead logo
+masthead_title:
+words_per_minute: 200 # For reading time estimates
+
+#================================================================================
+# Social Sharing
+#
+twitter:
+  username: *twitter
+facebook:
+  username:
+  app_id:
+  publisher:
+og_image: # Open Graph/Twitter default site image
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type: # Person or Organization (defaults to Person)
+  name: # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+
+#================================================================================
+# Collections
+
+collections:
+  posts:
+    permalink: "/:collection/:path/"
+    output: true
+  cpp_proposals:
+    permalink: "/:collection/:path/"
+    output: false
+  papers:
+    permalink: "/:collection/:path/"
+    output: false
+  talks:
+    permalink: "/:collection/:path/"
+    output: false
+
+
+
+#================================================================================
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-163700973-1"
+    anonymize_ip: # true, false (default)
+
+
+#================================================================================
+# Site Author
+author:
+  name: *fullname
+  location: Livermore, California
+  #avatar: "/assets/images/profile_small.jpg"
+  bio: >-
+    C++ Committee Member, scientist, programming models researcher.
+    Woman in HPC.  Opinionated, but opinions are my own and don't represent
+    my employer.
+
+  employer: Sandia National Labs
+  github: *github
+  googlescholar: "https://scholar.google.com/citations?hl=en&authuser=1&user=NCfA-poAAAAJ"
+  twitter: *twitter
+  email: web@dsh.fyi
+  linkedin: daisy-sophia-hollman-40a64225
+  stackoverflow: "152060/daisy-sophia-hollman"
+  facebook: TheWholeDaisy
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      # url: mailto:your.name@email.com
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      # url: "https://your-website.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      # url: "https://twitter.com/"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url: "https://facebook.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      # url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url: "https://instagram.com/"
+
+#================================================================================
+# Site Footer
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      # url:
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      # url:
+    - label: "GitLab"
+      icon: "fab fa-fw fa-gitlab"
+      # url:
+    - label: "Bitbucket"
+      icon: "fab fa-fw fa-bitbucket"
+      # url:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      # url:
+
+
+#================================================================================
+# Reading Files
+
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .vscode
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+
+#================================================================================
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+#================================================================================
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+
+#================================================================================
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
+#================================================================================
+# Outputting
+# permalink: /:categories/:title/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: America/Los_Angeles
+breadcrumbs: true
+
+#================================================================================
+# Plugins (previously gems:)
+#  - jekyll-paginate
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+
+# mimic GitHub Pages with --safe
+#  - jekyll-paginate
+whitelist:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+
+#================================================================================
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+# https://github.com/jekyll/jekyll-archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+
+#================================================================================
+# HTML Compression
+# - https://jch.penibelst.de/
+#compress_html:
+#  clippings: all
+#  ignore:
+#    envs: development
+
+
+#================================================================================
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: # true
+      share: true
+      related: true
+  # _cpp_proposals
+  - scope:
+      path: "/cpp_proposals/"
+      type: cpp_proposals
+    values:
+      layout: cpp_proposal
+      author_profile: true
+      comments: false
+  # _papers
+  - scope:
+      path: "/papers/"
+      type: papers
+    values:
+      layout: papers
+      author_profile: true
+      read_time: true
+      comments: false
+  - scope:
+      path: "/talks/"
+      type: talks
+    values:
+      layout: talks
+      author_profile: true
+      read_time: true
+      comments: false
+
+>>>>>>> 7ff7a9b (update)
